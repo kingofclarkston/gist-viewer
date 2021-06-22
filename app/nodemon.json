@@ -1,0 +1,6 @@
+{
+    "watch": ["./"],
+    "ext": "ts",
+    "ignore": ["./**/*.test.ts"],
+    "exec": "ENVIRONMENT=local ts-node --files ./index.ts"
+}
