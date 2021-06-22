@@ -40,7 +40,49 @@ const getById = (id: string) => {
     }
 };
 
+/**
+ * This one requires authentication
+ */
+const getStarred = () => {
+    try {
+        return apiClient
+            .get(`gists/starred`, {
+            })
+            .json();
+    } catch (e) {
+        logger.error(`Failed to retrieve starred gists`, { e });
+        throw e;
+    }
+};
+
+const starGist = (id: string) => {
+    try {
+        return apiClient
+            .put(`gists/${id}/star`, {
+            })
+            .json();
+    } catch (e) {
+        logger.error(`Failed to star gist ${id}`, { e });
+        throw e;
+    }
+};
+
+const unStarGist = (id: string) => {
+    try {
+        return apiClient
+            .delete(`gists/${id}/star`, {
+            })
+            .json();
+    } catch (e) {
+        logger.error(`Failed to un-star gist ${id}`, { e });
+        throw e;
+    }
+};
+
 export const GistService = {
     getByUsername,
     getById,
+    getStarred,
+    starGist,
+    unStarGist,
 }

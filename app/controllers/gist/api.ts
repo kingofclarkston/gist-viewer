@@ -24,3 +24,22 @@ export const getGist: RequestHandler = async (req, res, next) => {
     const data = await Github.getGist(id);
     res.json(data);
 };
+
+export const getStarred: RequestHandler = async (req, res, next) => {
+    const data = await Github.getStarred();
+    res.json(data);
+};
+
+export const starGist: RequestHandler = async (req, res, next) => {
+    const { id } = req.params;
+
+    const data = await Github.starGist(id);
+    res.json(data);
+};
+
+export const unStarGist: RequestHandler = async (req, res, next) => {
+    const { id } = req.params;
+
+    const data = await Github.unStarGist(id);
+    res.json(data);
+};
