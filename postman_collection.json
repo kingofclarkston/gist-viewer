@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "19aaa59c-30b6-4d79-b0e4-8f3b39d4289b",
+		"name": "Gist Viewer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gists by username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/v1/gists/?userName=kingofclarkston",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"gists",
+						""
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "kingofclarkston"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gist by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/v1/gists/94899e42f7ac0caa4c02b4617499cfae",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"gists",
+						"94899e42f7ac0caa4c02b4617499cfae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All starred",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/v1/gists/starred",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"gists",
+						"starred"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark as favorite",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/v1/gists/94899e42f7ac0caa4c02b4617499cfae/star",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"gists",
+						"94899e42f7ac0caa4c02b4617499cfae",
+						"star"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove as favorite",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/v1/gists/94899e42f7ac0caa4c02b4617499cfae/star",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"gists",
+						"94899e42f7ac0caa4c02b4617499cfae",
+						"star"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
