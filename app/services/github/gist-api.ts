@@ -23,11 +23,24 @@ const getByUsername = (userName: string) => {
             })
             .json();
     } catch (e) {
-        logger.error(`Failed to retrieve gists for user {userName`, { e });
+        logger.error(`Failed to retrieve gists for user ${userName}`, { e });
+        throw e;
+    }
+};
+
+const getById = (id: string) => {
+    try {
+        return apiClient
+            .get(`gists/${id}`, {
+            })
+            .json();
+    } catch (e) {
+        logger.error(`Failed to retrieve gist ${id}`, { e });
         throw e;
     }
 };
 
 export const GistService = {
     getByUsername,
+    getById,
 }
